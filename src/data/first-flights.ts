@@ -6,7 +6,7 @@ export const FIRST_FLIGHT_CONTESTS: FirstFlightContest[] = [
     number: 50,
     endDate: '2025-10-16',
     contestUrl: 'https://codehawks.cyfrin.io/c/2025-10-raisebox-faucet',
-    writeupPath: '/reports/2025-10-RaiseBox-Faucet.pdf',
+    writeupPath: 'https://lucash0pe.github.io/web3-security-portfolio/codehawks-first-flights/2025-10-Raisebox-Faucet.pdf',
     logoPath: '/logos/raisebox-faucet.webp',
     vulnerabilitiesFound: {
         high: 3,
@@ -19,7 +19,7 @@ export const FIRST_FLIGHT_CONTESTS: FirstFlightContest[] = [
     number: 51,
     endDate: '2025-10-30',
     contestUrl: 'https://codehawks.cyfrin.io/c/2025-10-company-simulator',
-    writeupPath: '/reports/2025-10-Company-Simulator.pdf',
+    writeupPath: 'https://lucash0pe.github.io/web3-security-portfolio/codehawks-first-flights/2025-10-Company-Simulator.pdf',
     logoPath: '/logos/company-simulator.webp',
     vulnerabilitiesFound: {
         high: 1,
@@ -32,7 +32,7 @@ export const FIRST_FLIGHT_CONTESTS: FirstFlightContest[] = [
     number: 52,
     endDate: '2025-11-13',
     contestUrl: 'https://codehawks.cyfrin.io/c/2025-11-brivault',
-    writeupPath: '/reports/2025-11-BriVault.pdf',
+    writeupPath: 'https://lucash0pe.github.io/web3-security-portfolio/codehawks-first-flights/2025-11-BriVault.pdf',
     logoPath: '/logos/brivault.webp',
     vulnerabilitiesFound: {
         high: 4,
@@ -45,7 +45,7 @@ export const FIRST_FLIGHT_CONTESTS: FirstFlightContest[] = [
     number: 54,
     endDate: '2025-11-16',
     contestUrl: 'https://codehawks.cyfrin.io/c/2025-12-token0x',
-    writeupPath: '/reports/2025-12-Token-0x.pdf',
+    writeupPath: 'https://lucash0pe.github.io/web3-security-portfolio/codehawks-first-flights/2025-12-Token-0x.pdf',
     logoPath: '/logos/token-0x.webp',
     vulnerabilitiesFound: {
         high: 1,
