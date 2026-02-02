@@ -195,3 +195,10 @@ All colors MUST be HSL.
     display: none;
   }
 }
+
+/* highlight.js background override */
+pre code.hljs {
+  background: transparent !important;
+  padding: 0 !important;
+}
+

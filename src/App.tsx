@@ -9,12 +9,14 @@ import { SkipToContent } from "@/components/ui/SkipToContent";
 import { LoadingFallback } from "@/components/ui/LoadingFallback";
 import { PageTransition } from "@/components/ui/PageTransition";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
+import { ScrollManager} from "@/components/routing/ScrollManager";
 import { AnimatePresence } from "framer-motion";
 import { lazy, Suspense } from "react";
 
 // Code-split route components for better performance
 const Index = lazy(() => import("./pages/Index"));
 const DamnVulnerableDeFi = lazy(() => import("./pages/DamnVulnerableDeFi"));
+const DamnVulnerableDeFiChallengeReport = lazy(() => import("./pages/DamnVulnerableDeFiChallengeReport"));
 const CodeHawksFirstFlights = lazy(() => import("./pages/CodeHawksFirstFlights"));
 const Contact = lazy(() => import("./pages/Contact"));
 const NotFound = lazy(() => import("./pages/NotFound"));
@@ -35,6 +37,7 @@ function AnimatedRoutes() {
             </PageTransition>
           }
         />
+
         <Route
           path="/damn-vulnerable-defi"
           element={
@@ -43,6 +46,16 @@ function AnimatedRoutes() {
             </PageTransition>
           }
         />
+
+        <Route
+          path="/damn-vulnerable-defi/:slug"
+          element={
+            <PageTransition>
+              <DamnVulnerableDeFiChallengeReport />
+            </PageTransition>
+          }
+        />
+
         <Route
           path="/codehawks-first-flights"
           element={
@@ -51,6 +64,7 @@ function AnimatedRoutes() {
             </PageTransition>
           }
         />
+
         <Route
           path="/contact"
           element={
@@ -59,6 +73,7 @@ function AnimatedRoutes() {
             </PageTransition>
           }
         />
+
         <Route
           path="*"
           element={
@@ -72,6 +87,7 @@ function AnimatedRoutes() {
   );
 }
 
+
 const App = () => (
   <ErrorBoundary>
     <QueryClientProvider client={queryClient}>
@@ -80,6 +96,7 @@ const App = () => (
           <Toaster />
           <Sonner />
           <BrowserRouter>
+            <ScrollManager />
             <SkipToContent />
             <Layout>
               <Suspense fallback={<LoadingFallback />}>

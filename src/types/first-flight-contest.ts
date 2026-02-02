@@ -12,4 +12,7 @@ export interface VulnerabilitiesFound {
   high: number;
   medium: number;
   low: number;
+
+  unique?: number;
+  selected?: number;
 }
