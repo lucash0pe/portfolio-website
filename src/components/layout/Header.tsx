@@ -77,21 +77,34 @@ export function Header() {
                       href={link.path}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="relative text-lg leading-7 font-light tracking-wide text-white transition-colors duration-300 hover:text-white/80"
+                      className={cn(
+                        "relative text-lg leading-7 font-light tracking-wide transition-colors duration-300",
+                        isTransparent
+                          ? "text-white hover:text-white/80"
+                          : "text-foreground hover:text-foreground/70"
+                      )}
                     >
                       {link.name}
                     </a>
                   ) : (
                     <Link
                       to={link.path}
-                      className="relative text-lg leading-7 font-light tracking-wide text-white transition-colors duration-300 hover:text-white/80"
+                      className={cn(
+                        "relative text-lg leading-7 font-light tracking-wide transition-colors duration-300",
+                        isTransparent
+                          ? "text-white hover:text-white/80"
+                          : "text-foreground hover:text-foreground/70"
+                      )}
                     >
                       {link.name}
                       {/* Active underline */}
                       {location.pathname === link.path && (
                         <motion.div
                           layoutId="activeNav"
-                          className="absolute -bottom-1 left-0 right-0 h-px bg-white"
+                          className={cn(
+                            "absolute -bottom-1 left-0 right-0 h-px",
+                            isTransparent ? "bg-white" : "bg-foreground"
+                          )}
                           transition={{ type: "spring", stiffness: 380, damping: 30 }}
                         />
                       )}
