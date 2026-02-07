@@ -15,13 +15,13 @@ function formatDate(yyyyMmDd: string): string {
 function SeverityPills({ v }: { v: VulnerabilitiesFound }) {
   return (
     <div className="flex flex-col items-end gap-1">
-      <div className="w-20 text-center px-2 py-1 rounded-full border border-red-600/40 bg-red-950/40 text-red-300 text-xs font-light tracking-wide">
+      <div className="w-20 text-center px-2 py-1 rounded-full border-2 border-red-600 bg-red-200 text-red-900 dark:border-red-600/40 dark:bg-red-950/40 dark:text-red-300 text-xs font-semibold tracking-wide">
         {v.high} High
       </div>
-      <div className="w-20 text-center px-2 py-1 rounded-full border border-orange-500/40 bg-orange-950/40 text-orange-300 text-xs font-light tracking-wide">
+      <div className="w-20 text-center px-2 py-1 rounded-full border-2 border-orange-600 bg-orange-200 text-orange-900 dark:border-orange-500/40 dark:bg-orange-950/40 dark:text-orange-300 text-xs font-semibold tracking-wide">
         {v.medium} Med
       </div>
-      <div className="w-20 text-center px-2 py-1 rounded-full border border-emerald-500/40 bg-emerald-950/40 text-emerald-300 text-xs font-light tracking-wide">
+      <div className="w-20 text-center px-2 py-1 rounded-full border-2 border-emerald-600 bg-emerald-200 text-emerald-900 dark:border-emerald-500/40 dark:bg-emerald-950/40 dark:text-emerald-300 text-xs font-semibold tracking-wide">
         {v.low} Low
       </div>
     </div>
