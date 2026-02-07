@@ -10,10 +10,11 @@ import { aboutMe } from '@/data/about-me';
 import { cn } from '@/lib/utils';
 
 const navLinks = [
-  { name: 'Home', path: '/' },
-  { name: 'Damn Vulnerable DeFi', path: '/damn-vulnerable-defi' },
-  { name: 'CodeHawks First Flights', path: '/codehawks-first-flights' },
-  { name: 'Contact', path: '/contact' },
+  { name: 'Home', path: '/', external: false },
+  { name: 'Damn Vulnerable DeFi', path: '/damn-vulnerable-defi', external: false },
+  { name: 'CodeHawks First Flights', path: '/codehawks-first-flights', external: false },
+  { name: 'Resume', path: 'https://lucash0pe.github.io/resume/resume.pdf', external: true },
+  { name: 'Contact', path: '/contact', external: false },
 ];
 
 /**
@@ -71,20 +72,31 @@ export function Header() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.4, delay: 0.1 * index }}
                 >
-                  <Link
-                    to={link.path}
-                    className="relative text-lg leading-7 font-light tracking-wide text-white transition-colors duration-300 hover:text-white/80"
-                  >
-                    {link.name}
-                    {/* Active underline */}
-                    {location.pathname === link.path && (
-                      <motion.div
-                        layoutId="activeNav"
-                        className="absolute -bottom-1 left-0 right-0 h-px bg-white"
-                        transition={{ type: "spring", stiffness: 380, damping: 30 }}
-                      />
-                    )}
-                  </Link>
+                  {link.external ? (
+                    <a
+                      href={link.path}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="relative text-lg leading-7 font-light tracking-wide text-white transition-colors duration-300 hover:text-white/80"
+                    >
+                      {link.name}
+                    </a>
+                  ) : (
+                    <Link
+                      to={link.path}
+                      className="relative text-lg leading-7 font-light tracking-wide text-white transition-colors duration-300 hover:text-white/80"
+                    >
+                      {link.name}
+                      {/* Active underline */}
+                      {location.pathname === link.path && (
+                        <motion.div
+                          layoutId="activeNav"
+                          className="absolute -bottom-1 left-0 right-0 h-px bg-white"
+                          transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                        />
+                      )}
+                    </Link>
+                  )}
                 </motion.div>
               ))}
             <motion.div
@@ -116,14 +128,27 @@ export function Header() {
               <SheetContent side="right" className="w-full sm:w-80">
                 <nav className="flex flex-col gap-6 mt-8">
                   {navLinks.map((link) => (
-                    <Link
-                      key={link.path}
-                      to={link.path}
-                      onClick={() => setMobileMenuOpen(false)}
-                      className="text-lg leading-7 font-light tracking-wide text-foreground hover:text-foreground/80"
-                    >
-                      {link.name}
-                    </Link>
+                    link.external ? (
+                      <a
+                        key={link.path}
+                        href={link.path}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={() => setMobileMenuOpen(false)}
+                        className="text-lg leading-7 font-light tracking-wide text-foreground hover:text-foreground/80"
+                      >
+                        {link.name}
+                      </a>
+                    ) : (
+                      <Link
+                        key={link.path}
+                        to={link.path}
+                        onClick={() => setMobileMenuOpen(false)}
+                        className="text-lg leading-7 font-light tracking-wide text-foreground hover:text-foreground/80"
+                      >
+                        {link.name}
+                      </Link>
+                    )
                   ))}
                 </nav>
               </SheetContent>
