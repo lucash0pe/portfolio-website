@@ -32,6 +32,7 @@ export interface Project {
 export interface AboutMe {
   name: string;
   tagline: string;
+  title?: string;
 
   biography: string;
 

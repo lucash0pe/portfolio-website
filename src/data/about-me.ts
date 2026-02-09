@@ -2,8 +2,8 @@ import type { AboutMe } from '@/types';
 
 export const aboutMe: AboutMe = {
   name: 'Lucas Hope',
-  tagline: 'Blockchain Researcher & Applied AI Developer',
-  biography: `I am a developer with a passion for blockchain technology and artificial intelligence. I am dedicated to continous growth and learning. I am looking to do something that makes an impact, and I am always open to new opportunities.`,
+  tagline: 'Web3 & AI',
+  biography: `Building and learning about Web3 & AI. Check out my recent work`,
 
   email: 'lucasfhope@icloud.com',
   socialLinks: {
